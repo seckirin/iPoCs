@@ -1,10 +1,10 @@
-id: inflxdb-unauth-access
+id: inflxdb-unauthorized-access
 
 info:
     name: InflxDB Unauthorized Access
     author: Yuuki
     severity: high
-    tags: unauth, influxdb, cve, cve-2019-20933
+    tags: unauth, database, influxdb, cve, cve-2019-20933
 
 http:
     - method: POST
