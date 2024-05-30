@@ -12,7 +12,7 @@ info:
     remediation: Enable Authentication in MongoDB
     metadata:
         max-request: 1
-    tags: unauth, database, mongodb, misconfig
+    tags: unauth, database, mongodb, misconfig, network
 
 tcp:
     - inputs:
