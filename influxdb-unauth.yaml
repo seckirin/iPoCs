@@ -1,25 +1,21 @@
 id: influxdb-unauth
 
 info:
-    name: InfluxDB - CVE-2019-20933 (Unauthenticated Access)
+    name: InfluxDB Unauthenticated Access
+    description: InfluxDB Database, Unauthenticated Access
     author: yuuki
     severity: high
-    tags: unauth, database, influxdb, cve, cve-2019-20933, misconfig
+    tags: db, database, influxdb, unauth
 
 http:
-    - method: POST
-
+    - method: GET
       path:
-          - "{{BaseURL}}/query"
-
-      headers:
-          Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoyNTM0MDIxODU2MDB9.Fu66RZDcUSawPpmtCpVDMr8kWjbTgmBa4I1kFzCLxM8
-          Content-Type: application/x-www-form-urlencoded
-
-      body: "q=SHOW DATABASES"
-
+          - "{{BaseURL}}/query?db=db&q=SHOW%20DATABASES"
+      matchers-condition: and
       matchers:
           - type: word
             words:
-                - '"statement_id":0'
+                - '"results":'
+                - '"name":"databases"'
+            condition: and
             part: body
