@@ -19,3 +19,6 @@ http:
                 - '"name":"databases"'
             condition: and
             part: body
+          - type: status
+            status:
+                - 200

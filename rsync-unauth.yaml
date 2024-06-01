@@ -1,11 +1,11 @@
-id: mongodb-unauth
+id: rsync-unauth
 
 info:
-    name: MongoDB Unauthenticated Access
-    description: MongoDB Database, Unauthenticated Access
+    name: Rsync Server Unauthenticated Access
+    description: Rsync Server, Unauthenticated Access
     author: yuuki
     severity: high
-    tags: database, db, mongodb, unauth
+    tags: server, rsync, unauth
 
 tcp:
     - inputs:
