@@ -1,11 +1,10 @@
 id: influxdb-unauth
 
 info:
-    name: InfluxDB Unauthenticated Access
-    description: InfluxDB Database, Unauthenticated Access
+    name: InfluxDB Database - Unauthenticated Access
     author: yuuki
     severity: high
-    tags: db, database, influxdb, unauth
+    tags: unauth, database, influxdb
 
 http:
     - method: GET
@@ -14,11 +13,11 @@ http:
       matchers-condition: and
       matchers:
           - type: word
+            part: body
             words:
                 - '"results":'
                 - '"name":"databases"'
             condition: and
-            part: body
           - type: status
             status:
                 - 200

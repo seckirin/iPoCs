@@ -1,0 +1,20 @@
+id: ldap-unauth
+
+info:
+    name: LDAP Server - Unauthenticated Access
+    author: yuuki
+    severity: medium
+    tags: unauth, server, ldap
+
+tcp:
+    - inputs:
+          - data: 300c020101600702010304008000
+            type: hex
+      host:
+          - "{{Hostname}}"
+      port: 389
+      read-size: 1024
+      matchers:
+          - type: binary
+            binary:
+                - "300c02010161070a010004000400"

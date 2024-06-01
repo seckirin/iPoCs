@@ -1,0 +1,27 @@
+id: etcd-unauth
+
+info:
+    name: etcd Server - Unauthenticated Access
+    author: yuuki
+    severity: high
+    tags: unauth, server, detcd
+
+http:
+    - method: GET
+      path:
+          - "{{BaseURL}}/v2/keys"
+      matchers-condition: and
+      matchers:
+          - type: word
+            part: body
+            words:
+                - '"node":'
+                - '"key":'
+            condition: and
+          - type: word
+            part: header
+            words:
+                - "application/json"
+          - type: status
+            status:
+                - 200

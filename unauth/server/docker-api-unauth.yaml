@@ -1,0 +1,29 @@
+id: docker-api-unauth
+
+info:
+    name: Docker API Server - Unauthenticated Access
+    author: yuuki
+    severity: high
+    tags: unauth, server, docker-api, docker
+
+http:
+    - method: GET
+      path:
+          - "{{BaseURL}}/info"
+          - "{{BaseURL}}/version"
+          - "{{BaseURL}}/v1.24/info"
+          - "{{BaseURL}}/v1.24/version"
+      matchers-condition: or
+      matchers:
+          - type: word
+            part: body
+            words:
+                - '"Platform":'
+                - '"Components":'
+            condition: and
+          - type: word
+            part: body
+            words:
+                - '"ID":'
+                - '"Containers":'
+            condition: and

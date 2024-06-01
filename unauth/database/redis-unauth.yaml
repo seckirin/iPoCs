@@ -1,21 +1,19 @@
 id: redis-unauth
 
 info:
-    name: Redis - Unauthenticated Access
+    name: Redis Database - Unauthenticated Access
     author: yuuki
     severity: high
-    tags: db, database, redis, unauth
+    tags: unauth, database, redis,
 
 tcp:
     - inputs:
           - data: "info\r\nquit\r\n"
-
       host:
           - "{{Hostname}}"
           - "tls://{{Hostname}}"
       port: 6379,6380
       read-size: 2048
-
       matchers-condition: and
       matchers:
           - type: word
