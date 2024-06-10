@@ -1,10 +1,10 @@
 id: rsync-unauth
 
 info:
-    name: Rsync Server - Unauthenticated Access
+    name: Rsync Service - Unauthenticated Access
     author: yuuki
     severity: high
-    tags: unauth, server, rsync
+    tags: unauth, service, rsync
 
 tcp:
     - inputs:

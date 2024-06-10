@@ -1,10 +1,10 @@
 id: etcd-unauth
 
 info:
-    name: etcd Server - Unauthenticated Access
+    name: etcd Service - Unauthenticated Access
     author: yuuki
     severity: high
-    tags: unauth, server, detcd
+    tags: unauth, service, etcd
 
 http:
     - method: GET

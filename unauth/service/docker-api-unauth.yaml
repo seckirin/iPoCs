@@ -1,10 +1,10 @@
 id: docker-api-unauth
 
 info:
-    name: Docker API Server - Unauthenticated Access
+    name: Docker API Service - Unauthenticated Access
     author: yuuki
     severity: high
-    tags: unauth, server, docker-api, docker
+    tags: unauth, service, docker-api, docker
 
 http:
     - method: GET

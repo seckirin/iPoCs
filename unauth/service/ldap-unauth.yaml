@@ -1,10 +1,10 @@
 id: ldap-unauth
 
 info:
-    name: LDAP Server - Unauthenticated Access
+    name: LDAP Service - Unauthenticated Access
     author: yuuki
     severity: medium
-    tags: unauth, server, ldap
+    tags: unauth, service, ldap
 
 tcp:
     - inputs:
