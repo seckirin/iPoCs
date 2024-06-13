@@ -1,0 +1,25 @@
+id: google-analytics-id-detection
+info:
+  name: Google Analytics ID Detection
+  author: yuuki
+  severity: info
+  tags: detection
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    redirects: true
+    max-redirects: 3
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - "UA-[0-9]+(-[0-9]+)?"
+          - "G-[A-Z0-9]+"
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "UA-[0-9]+(-[0-9]+)?"
+          - "G-[A-Z0-9]+"
